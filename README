@@ -1,0 +1,102 @@
+What is dohthello?
+------------------
+
+     dohthello is an Othello(tm?) clone that currently supports a curses
+     interface, computer opponents, and network play.
+
+Building dohthello:
+------------------
+
+     To compile dohthello, you need to have the freely available ncurses
+     library installed. For information on obtaining and installing
+     ncurses, please see the URL
+
+          http://www.ccil.org/~esr/ncurses.html
+
+     Once ncurses has been successfully installed, edit the Makefile to
+     reflect the correct C compiler, include, and link flags for your
+     machine. You might also want to change the default installation
+     directories. Type 'make' to compile dohthello, and/or 'make install'
+     to copy the dohthello binary and man page to the specified installation
+     directory.
+
+     dohthello has been built and tested under SunOS 4.1.4, Solaris 2.5, 
+     and Linux 1.2.6.
+
+
+Playing dohthello:
+------------------
+
+     Please see the man page for descriptions of available options. By
+     default, dohthello will start with both white and black players local,
+     with computer skill level and suggestion skill level set to 2.
+     
+     If you've ever played Othello(tm?), you're ready to play dohthello. If
+     you haven't, hopefully the following synopsis will help you get
+     started.
+
+     dohthello is a board game played on an 8x8 board, with two sided
+     pieces, once side black, the other white. As play proceeds, pieces
+     are added to the board, and pieces already on the board are switched
+     from one color to the other.
+
+     The objective of the game is to have the most pieces your color when
+     no more moves can be made. Each turn consists of placing one piece
+     on the board that "traps" one or more of your opponents pieces 
+     between your newly played piece and one of your pieces already in
+     place on the board. For example, consider the following board
+     configuration, which is the starting configuration for all games:
+
+                             - - - - - - - -
+                             - - - - - - - -
+                             - - - - - - - -
+                             - - - W B - - -
+                             - - - B W - - -
+                             - - - - - - - -
+                             - - - - - - - -
+                             - - - - - - - -
+
+     Assuming it is black's turn, there are 4 possible moves:
+
+                             - - - - - - - -
+                             - - - - - - - -
+                             - - - 2 - - - -
+                             - - 1 W B - - -
+                             - - - B W 4 - -
+                             - - - - 3 - - -
+                             - - - - - - - -
+                             - - - - - - - -
+
+     If black choose to move the position 2, he would place a piece on
+     that position and flip any white pieces between his new piece
+     and any existing piece:
+
+                             - - - - - - - -
+                             - - - - - - - -
+                             - - - B - - - -
+                             - - - B B - - -
+                             - - - B W - - -
+                             - - - - - - - -
+                             - - - - - - - -
+                             - - - - - - - -
+
+     To gain a better understanding of dohthello strategy, you might try
+     watching the computer play itself for a few games, with varying
+     skill levels, with the command 'dohthello -black computer -white
+     computer'.
+
+
+Credits:
+--------
+
+     It's mostly my fault. Please send comments, complaints, suggestions,
+     digital cash, etc, to <henson@acm.org>.
+
+
+     Thanks to Mark Pettit for beta testing and suggestions.
+
+
+What's new in version 0.9:
+--------------------------
+
+Everything. It's the first beta release.

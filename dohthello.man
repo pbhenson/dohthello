@@ -1,0 +1,60 @@
+.TH DOHTHELLO 1 "0.9" "dohthello"
+.SH NAME
+dohthello \- Othello(tm?) like board game
+.SH SYNOPSIS
+.B dohthello
+[option ...]
+.SH DESCRIPTION
+Dohthello is an Othello(tm?) like board game that currently supports
+a curses based interface, computer opponents, and network play.
+.SH OPTIONS
+.TP 8
+-help
+prints usage summary
+.TP 8
+-version
+prints dohthello version number
+.TP 8
+-white [local|computer|network]
+sets type of white player (defaults to local). If white player is
+network, does not require -host option, but may include -port option
+.TP 8
+-black [local|computer|network]
+sets type of black player (defaults to local). If black player is
+network, requires -host option and may include -port option
+.TP 8
+-skill int
+sets computer skill level (defaults to 2). Valid levels are 0-10 inclusive
+.TP 8
+-suggskill int
+sets suggestion skill level (defaults to 2). Valid levels are 0-10 inclusive
+.TP 8
+-host <hostname>
+specify remote host for network game
+.TP 8
+-port int
+specify remote port for network game (optional, defaults to 6432)
+.SH EXAMPLES
+.TP 8
+dohthello
+.br 
+Starts game with both white and black players local
+.TP 8
+dohthello -black computer
+.br
+Starts game with white player local and black player computer
+.TP 8
+dohthello -white network
+.br
+Starts game with black player local and white player network
+.TP 8
+dohthello -black network -host blat
+.br
+Assuming previous example was run on host blat, starts game with
+white player local and black player network
+.SH COPYRIGHT
+Copyright 1996
+
+by Paul Henson <henson@acm.org>
+.SH AUTHOR
+Paul Henson <henson@acm.org>
